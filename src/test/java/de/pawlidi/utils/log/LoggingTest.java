@@ -22,8 +22,15 @@ import org.junit.jupiter.api.Test;
 public class LoggingTest {
 
 	@Test
-	public void testLogging() {
+	public void testLog() {
 		ILog log = Logging.getLog(LoggingTest.class);
+		assertNotNull(log);
+		log.info("Test");
+	}
+
+	@Test
+	public void testLogProvider() {
+		LogProvider log = Logging.getLogProvider(LoggingTest.class);
 		assertNotNull(log);
 		log.info("Test");
 	}
